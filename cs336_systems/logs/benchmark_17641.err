@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 189, in <module>
+    "backward_times_std": [f"{np.std(backward_times):.4f} ms"],
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not iterable

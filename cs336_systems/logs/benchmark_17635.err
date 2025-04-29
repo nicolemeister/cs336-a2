@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 189, in <module>
+    "memory_usage": [f"{(sum(memory_before_backward)/len(memory_before_backward)) / 1024**2:.2f} MB"]
+                         ~~~^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not iterable

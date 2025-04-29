@@ -1,0 +1,11 @@
+\begin{tabular}{lrllll}
+\toprule
+Model & Warmup Steps & Forward (mean) & Backward (mean) & Forward (std) & Backward (std) \\
+\midrule
+small & 5 & 17.5418 ms & 19.6413 ms & 0.0980 ms & 0.0731 ms \\
+medium & 5 & 35.4428 ms & 37.9951 ms & 0.1223 ms & 0.1103 ms \\
+large & 5 & 53.1812 ms & 57.1933 ms & 0.6277 ms & 0.2529 ms \\
+xl & 5 & 205.1632 ms & 236.0231 ms & 2.9119 ms & 5.9582 ms \\
+2.7B & 5 & 123.3042 ms & 140.5365 ms & 5.3851 ms & 4.1306 ms \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/benchmarking.py", line 82, in <module>
+    data_x, data_y = cs336_data.get_batch(
+                     ~~~~~~~~~~~~~~~~~~~~^
+        dataset=dataset,
+        ^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        device=device
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/data.py", line 13, in get_batch
+    starting_idxs = torch.randint(len(dataset) - context_length, (batch_size,))
+RuntimeError: random_ expects 'from' to be less than 'to', but got from=0 >= to=-6384

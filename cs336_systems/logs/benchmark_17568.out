@@ -1,0 +1,2 @@
+Running model with name: small, d_model: 16, d_ff: 3072, num_layers: 12, num_heads: 1, num_warmups: 5, context_length: 8192, num_trials: 100, use_mixed_precision: 0, memory_profile: 0
+Using device:  cuda

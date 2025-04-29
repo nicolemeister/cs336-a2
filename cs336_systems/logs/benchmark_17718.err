@@ -1,0 +1,101 @@
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 131, in <module>
+    logits = forward_pass()
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 114, in forward_pass
+    logits = model.forward(data_x)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 251, in forward
+    x = layer(x)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 388, in forward
+    x_ffn = self.ffn(self.ln2(attn_sublayer_output))
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 401, in forward
+    return self.w2(silu(self.w1(x)) * self.w3(x))
+                   ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 768.00 MiB. GPU 0 has a total capacity of 79.19 GiB of which 311.06 MiB is free. Including non-PyTorch memory, this process has 78.88 GiB memory in use. Of the allocated memory 70.35 GiB is allocated by PyTorch, and 7.87 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:194: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 131, in <module>
+    logits = forward_pass()
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 114, in forward_pass
+    logits = model.forward(data_x)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 251, in forward
+    x = layer(x)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 388, in forward
+    x_ffn = self.ffn(self.ln2(attn_sublayer_output))
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 401, in forward
+    return self.w2(silu(self.w1(x)) * self.w3(x))
+                   ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 768.00 MiB. GPU 0 has a total capacity of 79.19 GiB of which 117.06 MiB is free. Including non-PyTorch memory, this process has 79.07 GiB memory in use. Of the allocated memory 78.25 GiB is allocated by PyTorch, and 162.86 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_inductor/compile_fx.py:194: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 131, in <module>
+    logits = forward_pass()
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 114, in forward_pass
+    logits = model.forward(data_x)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 574, in _fn
+    return fn(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 235, in forward
+    def forward(self, x: Int[Tensor, " ... sequence_length"]) -> Float[Tensor, " ... sequence_length vocab_size"]:
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+    return fn(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_functorch/aot_autograd.py", line 1184, in forward
+    return compiled_fn(full_args)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 310, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+        compiled_fn, args_, disable_amp=disable_amp, steal_args=True
+    )
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/utils.py", line 126, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ~^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/utils.py", line 100, in g
+    return f(*args)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1585, in forward
+    fw_outs = call_func_at_runtime_with_args(
+        CompiledFunction.compiled_fw,
+        args,
+        disable_amp=disable_amp,
+    )
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/utils.py", line 126, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ~^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 490, in wrapper
+    return compiled_fn(runtime_args)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 672, in inner_fn
+    outs = compiled_fn(args)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_inductor/output_code.py", line 466, in __call__
+    return self.current_callable(inputs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/_inductor/utils.py", line 2128, in run
+    return model(new_inputs)
+  File "/tmp/torchinductor_c-nmeist/7j/c7jvj7vzgyuzjg7or4zsgwcbv6amif5szisv3qzicjuoup3emfdb.py", line 1420, in call
+    buf302 = empty_strided_cuda((1, 65536, 10000), (655360000, 10000, 1), torch.float32)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.44 GiB. GPU 0 has a total capacity of 79.19 GiB of which 2.16 GiB is free. Including non-PyTorch memory, this process has 77.02 GiB memory in use. Of the allocated memory 75.82 GiB is allocated by PyTorch, and 554.36 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

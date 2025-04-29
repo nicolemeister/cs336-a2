@@ -1,0 +1,2 @@
+name,num_warmups,forward_times_mean,backward_times_mean,forward_times_std,backward_times_std
+2.7B,5,88.1627 ms,214.4551 ms,0.0364 ms,0.1030 ms

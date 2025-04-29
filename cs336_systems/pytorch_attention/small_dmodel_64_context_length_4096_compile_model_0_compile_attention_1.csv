@@ -1,0 +1,2 @@
+name,num_warmups,forward_times_mean,backward_times_mean,forward_times_std,backward_times_std,memory_usage,compile_model,compile_attention,d_model,seq_len
+small,5,50.0894 ms,107.8939 ms,0.2020 ms,0.1672 ms,41668.54 MB,0,1,64,4096

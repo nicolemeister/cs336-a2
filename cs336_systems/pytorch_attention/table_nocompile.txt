@@ -1,0 +1,18 @@
+\begin{tabular}{lrrlrlll}
+\toprule
+Model & Compile Model & Compile Attention & D Model & Seq Len & Forward (mean) & Backward (mean) & Memory Usage \\
+\midrule
+small & 0 & 0 & 16 & 256 & 14.8477 ms & 16.0883 ms & 1897.62 MB \\
+small & 0 & 0 & 16 & 1024 & 15.5444 ms & 25.2735 ms & 7935.31 MB \\
+small & 0 & 0 & 16 & 4096 & 72.8802 ms & 152.4346 ms & 40861.06 MB \\
+small & 0 & 0 & 32 & 256 & 26.8891 ms & 31.1747 ms & 1930.73 MB \\
+small & 0 & 0 & 32 & 1024 & 15.4431 ms & 26.1634 ms & 8014.87 MB \\
+small & 0 & 0 & 32 & 4096 & 64.1085 ms & 142.1252 ms & 41129.87 MB \\
+small & 0 & 0 & 64 & 256 & 14.9787 ms & 16.4476 ms & 1995.27 MB \\
+small & 0 & 0 & 64 & 1024 & 15.6615 ms & 27.9557 ms & 8175.28 MB \\
+small & 0 & 0 & 64 & 4096 & 75.2905 ms & 157.0931 ms & 41667.04 MB \\
+small & 0 & 0 & 128 & 256 & 15.1665 ms & 16.6936 ms & 2140.24 MB \\
+small & 0 & 0 & 128 & 1024 & 17.2541 ms & 34.5115 ms & 8513.44 MB \\
+small & 0 & 0 & 128 & 4096 & 99.8461 ms & 206.7432 ms & 42760.78 MB \\
+\bottomrule
+\end{tabular}

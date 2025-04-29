@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 129, in <module>
+    logits = forward_pass()
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/pytorch_attention.py", line 112, in forward_pass
+    logits = model.forward(data_x)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 251, in forward
+    x = layer(x)
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 388, in forward
+    x_ffn = self.ffn(self.ln2(attn_sublayer_output))
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/c-nmeist/assignment2-systems/cs336-basics/cs336_basics/model.py", line 401, in forward
+    return self.w2(silu(self.w1(x)) * self.w3(x))
+                   ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 768.00 MiB. GPU 0 has a total capacity of 79.19 GiB of which 311.06 MiB is free. Including non-PyTorch memory, this process has 78.88 GiB memory in use. Of the allocated memory 70.35 GiB is allocated by PyTorch, and 7.87 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
