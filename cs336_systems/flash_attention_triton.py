@@ -193,9 +193,88 @@ class TritonFlashAttention(torch.autograd.Function):
             K_TILE_SIZE=ctx.K_TILE_SIZE,
             is_causal=is_causal
         )
-        ctx.save_for_backward(L)
+        ctx.save_for_backward(L, Q, K, V)
         ctx.is_causal = is_causal
             
         return O
+
+    
+    @torch.compile
+    def flash_attention_backward(q, k, v, l, grad_out, d):
+        scale = 1 / torch.sqrt(torch.tensor(d, device=q.device))
+        
+        # Compute S = QK^T/√d
+        s = torch.matmul(q, k.transpose(-2, -1)) * scale  # [batch, N_q, N_k]
+        
+        # Compute P = exp(S - L.unsqueeze(-1))
+        p = torch.exp(s - l.unsqueeze(-1))  # [batch, N_q, N_k]
+        
+        # Compute D = sum(P ◦ (dO V^T), dim=2)
+        dov = torch.matmul(grad_out, v.transpose(-2, -1))  # [batch, N_q, N_k]
+        d_vec = torch.sum(p * dov, dim=2)  # [batch, N_q]
+        
+        # Compute gradients
+        # dV = P^T dO
+        dv = torch.matmul(p.transpose(-2, -1), grad_out)  # [batch, N_k, d]
+        
+        # dS = P ◦ (dOV^T - D.unsqueeze(-1))
+        ds = p * (dov - d_vec.unsqueeze(-1))  # [batch, N_q, N_k]
+        
+        # dQ = dS K/√d
+        dq = torch.matmul(ds, k) * scale  # [batch, N_q, d]
+        
+        # dK = dS^T Q/√d
+        dk = torch.matmul(ds.transpose(-2, -1), q) * scale  # [batch, N_k, d]
+        
+        return dq, dk, dv
+        
+
     def backward(ctx, grad_output):
-        raise NotImplementedError("Backward pass not implemented")
+        '''
+        Implement the backward pass for your FlashAttention-2 autograd.Function using PyTorch (not
+        Triton) and torch.compile. Your implementation should take the Q, K, V, O, dO, L and tensors as
+        output, and return dQ, dK and dV. Remember to compute and use the D vector.
+        '''
+        L, Q, K, V = ctx.saved_tensors
+        dO = grad_output
+        d = Q.shape[-1]  # embedding dimension
+        
+        # Set tile sizes
+        B_q, B_k = 16, 16  # Tile sizes of at least 16x16 as required
+        
+        # Define the backward pass function to be compiled
+        
+                
+        @torch.compile
+        def flash_attention_backward(q, k, v, l, grad_out, d):
+            scale = 1 / torch.sqrt(torch.tensor(d, device=q.device))
+            
+            # Compute S = QK^T/√d
+            s = torch.matmul(q, k.transpose(-2, -1)) * scale  # [batch, N_q, N_k]
+            
+            # Compute P = exp(S - L.unsqueeze(-1))
+            p = torch.exp(s - l.unsqueeze(-1))  # [batch, N_q, N_k]
+            
+            # Compute D = sum(P ◦ (dO V^T), dim=2)
+            dov = torch.matmul(grad_out, v.transpose(-2, -1))  # [batch, N_q, N_k]
+            d_vec = torch.sum(p * dov, dim=2)  # [batch, N_q]
+            
+            # Compute gradients
+            # dV = P^T dO
+            dv = torch.matmul(p.transpose(-2, -1), grad_out)  # [batch, N_k, d]
+            
+            # dS = P ◦ (dOV^T - D.unsqueeze(-1))
+            ds = p * (dov - d_vec.unsqueeze(-1))  # [batch, N_q, N_k]
+            
+            # dQ = dS K/√d
+            dq = torch.matmul(ds, k) * scale  # [batch, N_q, d]
+            
+            # dK = dS^T Q/√d
+            dk = torch.matmul(ds.transpose(-2, -1), q) * scale  # [batch, N_k, d]
+            
+            return dq, dk, dv
+            
+        # Call the compiled function with our tensors
+        dQ, dK, dV = flash_attention_backward(q=Q, k=K, v=V, l=L, grad_out=dO, d=d)
+
+        return dQ, dK, dV, None

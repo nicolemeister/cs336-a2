@@ -1,0 +1,2 @@
+d_model,seq_len,compile_attention,forward_times_mean,backward_times_mean,end_to_end_times_mean,forward_times_std,backward_times_std,end_to_end_times_std
+64,1024,0,0.1671 ms,0.3117 ms,0.4842 ms,0.0099 ms,0.0036 ms,0.0084 ms

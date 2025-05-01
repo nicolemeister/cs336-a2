@@ -1,0 +1,2 @@
+implementation,d_model,seq_len,use_mixed_precision,forward_times_mean,backward_times_mean,forward_backward_times_mean
+triton,32,8192,0,0.9003 ms,8.5053 ms,9.5550 ms
