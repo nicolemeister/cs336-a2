@@ -1,0 +1,18 @@
+\begin{tabular}{llrr}
+\toprule
+Backend & Data Size & Processes & Time (s) \\
+\midrule
+cpu & 1MB & 2 & 1.370921 \\
+cpu & 1MB & 4 & 1.789316 \\
+cpu & 1MB & 6 & 2.054658 \\
+cpu & 10MB & 2 & 1.705952 \\
+cpu & 10MB & 4 & 1.841302 \\
+cpu & 10MB & 6 & 1.865576 \\
+cpu & 100MB & 2 & 1.676743 \\
+cpu & 100MB & 4 & 2.264639 \\
+cpu & 100MB & 6 & 1.842766 \\
+cpu & 1GB & 2 & 3.915447 \\
+cpu & 1GB & 4 & 4.559391 \\
+cpu & 1GB & 6 & 5.117092 \\
+\bottomrule
+\end{tabular}

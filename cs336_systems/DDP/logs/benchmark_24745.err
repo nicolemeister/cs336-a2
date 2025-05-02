@@ -1,0 +1,21 @@
+W0501 16:10:19.464000 1234043 torch/multiprocessing/spawn.py:169] Terminating process 1234072 via signal SIGTERM
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/DDP/distributed_hello_world.py", line 108, in <module>
+    mp.spawn(fn=distributed_demo, args=(world_size, data_size, device_type), nprocs=world_size, join=True)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/multiprocessing/spawn.py", line 340, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/multiprocessing/spawn.py", line 296, in start_processes
+    while not context.join():
+              ~~~~~~~~~~~~^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/multiprocessing/spawn.py", line 215, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 1 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/multiprocessing/spawn.py", line 90, in _wrap
+    fn(i, *args)
+    ~~^^^^^^^^^^
+TypeError: distributed_demo() missing 1 required positional argument: 'answer'
+

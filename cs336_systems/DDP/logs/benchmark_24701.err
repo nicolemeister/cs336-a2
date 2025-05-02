@@ -1,0 +1,5 @@
+/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3860: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+slurmstepd-ad12a3ca-03: error: *** JOB 24701 ON ad12a3ca-03 CANCELLED AT 2025-05-01T15:34:16 ***

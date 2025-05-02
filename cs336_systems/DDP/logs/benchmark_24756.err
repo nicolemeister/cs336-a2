@@ -1,0 +1,55 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=83, pipe_handle=85)
+                                                  ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/c-nmeist/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                                  run_name="__mp_main__")
+  File "<frozen runpy>", line 286, in run_path
+  File "<frozen runpy>", line 259, in _get_code_from_file
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/DDP/distributed_hello_world.py", line 89
+    if device_type == "cuda":
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=83, pipe_handle=87)
+                                                  ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/multiprocessing/spawn.py", line 122, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/c-nmeist/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/c-nmeist/.local/share/uv/python/cpython-3.13.3-linux-x86_64-gnu/lib/python3.13/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                                  run_name="__mp_main__")
+  File "<frozen runpy>", line 286, in run_path
+  File "<frozen runpy>", line 259, in _get_code_from_file
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/DDP/distributed_hello_world.py", line 89
+    if device_type == "cuda":
+IndentationError: unexpected indent
+W0501 16:18:37.896000 976741 torch/multiprocessing/spawn.py:169] Terminating process 977397 via signal SIGTERM
+W0501 16:18:37.898000 976741 torch/multiprocessing/spawn.py:169] Terminating process 977398 via signal SIGTERM
+W0501 16:18:37.898000 976741 torch/multiprocessing/spawn.py:169] Terminating process 977399 via signal SIGTERM
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/DDP/distributed_hello_world.py", line 122, in <module>
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/multiprocessing/spawn.py", line 340, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/multiprocessing/spawn.py", line 296, in start_processes
+    while not context.join():
+              ~~~~~~~~~~~~^^
+  File "/home/c-nmeist/assignment2-systems/.venv/lib/python3.13/site-packages/torch/multiprocessing/spawn.py", line 204, in join
+    raise ProcessExitedException(
+    ...<4 lines>...
+    )
+torch.multiprocessing.spawn.ProcessExitedException: process 0 terminated with exit code 1

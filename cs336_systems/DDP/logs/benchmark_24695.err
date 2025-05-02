@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/DDP/distributed_hello_world.py", line 98, in <module>
+    avg_time = result[0]  # result[0] is from rank 0
+               ~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable

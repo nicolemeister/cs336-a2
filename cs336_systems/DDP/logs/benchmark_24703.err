@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/DDP/distributed_hello_world.py", line 105, in <module>
+    result = mp.spawn(fn=distributed_demo, args=(world_size, data_size, device_type), nprocs=world_size, join=True, return_results=True)
+TypeError: spawn() got an unexpected keyword argument 'return_results'

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/c-nmeist/assignment2-systems/cs336_systems/DDP/distributed_hello_world.py", line 142, in <module>
+    results.append({
+    ^^^^^^^
+NameError: name 'results' is not defined

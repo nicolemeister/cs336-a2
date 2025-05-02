@@ -1,0 +1,18 @@
+\begin{tabular}{llrr}
+\toprule
+Backend & Data Size & Processes & Time (s) \\
+\midrule
+cuda & 100MB & 2 & 0.227335 \\
+cuda & 100MB & 4 & 0.500559 \\
+cuda & 100MB & 6 & 0.768812 \\
+cuda & 10MB & 2 & 0.095122 \\
+cuda & 10MB & 4 & 0.181040 \\
+cuda & 10MB & 6 & 0.259420 \\
+cuda & 1GB & 2 & 0.221875 \\
+cuda & 1GB & 4 & 0.494680 \\
+cuda & 1GB & 6 & 0.782165 \\
+cuda & 1MB & 2 & 0.077828 \\
+cuda & 1MB & 4 & 0.149788 \\
+cuda & 1MB & 6 & 0.221056 \\
+\bottomrule
+\end{tabular}

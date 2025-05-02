@@ -1,0 +1,2 @@
+device_type,data_size,world_size,time_seconds
+cuda,1MB,6,0.22105586379766465
